@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -29,7 +28,7 @@ import Card from "../components/Card.astro";
             </h1>
             <p id="slogan" class="MapItt-slogan">
               <strong>
-                Explore your world and your friends' world with MapItT. Available
+                Explore your world and your friends' world with MapItT.<br /> Available
                 worldwide.
               </strong>
             </p>
@@ -217,8 +216,7 @@ import Card from "../components/Card.astro";
 
 <style>
   main {
-    margin: auto;
-    padding: 1rem;
+    margin: 10px;
     width: 800px;
     max-width: calc(100% - 2rem);
     color: rgb(7, 5, 5);
@@ -237,10 +235,10 @@ import Card from "../components/Card.astro";
     z-index: -1;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 1;
-    text-align: center;
+    text-align: left;
     margin-bottom: 1em;
   }
 
@@ -261,7 +259,7 @@ import Card from "../components/Card.astro";
   .MapIt-video-presentation {
     flex: 1; /* Ocupa la mitad del espacio disponible */
     box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el tamaño del contenedor */
-    padding: 20px; /* Añade algo de espacio alrededor del texto */
+    padding-top: 20px; /* Añade algo de espacio alrededor del texto */
     font-family: "Carter One", serif;
   }
   #slogan {
@@ -269,9 +267,8 @@ import Card from "../components/Card.astro";
     font-family: "Almendra", serif;
   }
 
-  .MapIt-video-presentation h2,
   .MapIt-video-presentation p {
-    margin: 0px 0; /* Reduce el espacio alrededor de los elementos h3 y p */
+    margin: 0px 0; /* Reduce el espacio alrededor de los elementos p */
   }
 
   .MapIt-video {
@@ -300,7 +297,7 @@ import Card from "../components/Card.astro";
 
   input[type="range"] {
     -webkit-appearance: none;
-    width: 50%;
+    width: 80%;
     height: 25px;
     border-radius: 8px;
     background: #d3d3d3;
@@ -330,10 +327,10 @@ import Card from "../components/Card.astro";
 
   #slider-label {
     position: absolute;
-    top: 5px; /* Ajusta según sea necesario */
-    left: 36%; /* Centra el texto */
+    top: 3px; /* Ajusta según sea necesario */
+    left: 60%; /* Centra el texto */
     transform: translateX(-50%); /* Centra el texto */
-    font-size: 10px; /* Ajusta según sea necesario */
+    font-size: 8px; /* Ajusta según sea necesario */
     z-index: 1;
   }
 
@@ -389,12 +386,13 @@ import Card from "../components/Card.astro";
   }
 
   .MapIt-phone-image {
-    height: 500px;
-    width: 45%;
+    height: auto;
+    width: 50%;
 
     background-size: cover;
     display: inline-block;
     vertical-align: middle;
+    
   }
 
   .MapIt-features,
@@ -405,6 +403,7 @@ import Card from "../components/Card.astro";
     display: inline-block;
     vertical-align: middle;
   }
+
 
   .section-title {
     height: 12px;
@@ -425,6 +424,7 @@ import Card from "../components/Card.astro";
     text-align: left;
     font-family: "Carter One", serif;
     margin-top: 0;
+    font-size: 25px;
   }
 
   #testimonial-text,
@@ -448,7 +448,6 @@ import Card from "../components/Card.astro";
     width: 100%; /* Ajusta este valor */
     height: auto; /* Mantén esto en auto para mantener las proporciones de la imagen */
     padding-top: 100px;
-    margin-left: -30px;
   }
 
   .marker-bullet {
@@ -479,17 +478,10 @@ import Card from "../components/Card.astro";
   }
 
   .mapit-photos {
-    width: 100%;
+    width: 110%;
     height: auto;
+    padding-top: 20px;
   }
 
-  @media (max-width: 600px) {
-    .flex-container {
-      flex-direction: column;
-    }
 
-    .MapIt-video-presentation {
-      /* ajusta los estilos para que se vean bien en pantallas pequeñas */
-    }
-  }
 </style>
