@@ -5,321 +5,319 @@ let title = Astro.props.title;
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="Landing Page" content={title} />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Landing Page" content={title} />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
+    />
 
-        <!-- favicoin NO FUNCIONA AUN -->
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body>
-        <header id="page-header" class="site-header">
-            <nav id="mainnav" class="site-header">
-                <img src="../MapiITLogo.png" alt="Map IT Logo">
-                <h1 id="app-name-nav" class="app-name">MapIT</h1>
-                
-                    <ul>
-                        <li class="home-bottom"><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                    </ul>
-                <a href="COLOCAR LINK PARA DESCARGAR" class="boton">Download</a>
-            </nav>
-        </header>
-		
-		<slot>
-			<div id="random-images-container"></div>
-			<script>
-				// Número de imágenes que quieres mostrar
-				const numImages = 25;
-			
-				// La ruta a tu imagen
-				const imageUrl = '../stars.png';
-			
-				// El contenedor donde se colocarán las imágenes
-				const container = document.getElementById('random-images-container');
-				if (!container) throw new Error("No se encontró el contenedor de imágenes");
-			
-				// Obtén las alturas del nav y del footer
-				const nav = document.querySelector('nav');
-				const footer = document.querySelector('footer');
-				if (!nav || !footer) throw new Error("No se encontró el nav o el footer");
-			
-				const navHeight = nav.offsetHeight;
-				const footerHeight = footer.offsetHeight;
-			
-				for (let i = 0; i < numImages; i++) {
-					// Crea una nueva imagen
-					const img = new Image();
-					img.src = imageUrl;
-					img.style.position = 'absolute';
-			
-					// Cambia el tamaño de la imagen
-					img.style.width = '30px';  // Cambia esto al ancho que desees
-					img.style.height = '30px'; // Cambia esto a la altura que desees
-			
-					// Genera una posición aleatoria para la imagen
-					img.style.top = Math.random() * (document.body.scrollHeight - navHeight - footerHeight) + navHeight + 'px';
-					img.style.left = Math.random() * document.body.scrollWidth + 'px';
-			
-					// Agrega la imagen al contenedor
-					container.appendChild(img);
-				}
-			</script>
-		</slot>
+    <!-- favicoin NO FUNCIONA AUN -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav id="mainnav" class="site-header">
+      <div>
+        <img src="../MapiITLogo.png" alt="Map IT Logo" />
+        <p id="app-name-nav" class="app-name">MapIT</p>
+      </div>
+      <ul>
+        <li class="home-bottom"><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li>
+          <a href="COLOCAR LINK PARA DESCARGAR" class="boton">Download</a>
+        </li>
+      </ul>
+    </nav>
 
-        <footer>
-			<div class="footer-container">
-				<div class="footer-content">
-					<div class="footer-section">
-						<h3>Contact Us</h3>
-						<div class="contact-info">
-							<img src="../mail.png" alt="mail-logo">
-							<p>Help@MapIt.com</p>
-						</div>
-						<div class="contact-info">
-							<img src="../telefono.png" alt="telefono-logo">
-							<p>1-800-123-4567</p>
-						</div>
-					</div>
-					<div class="footer-section">
-						<h3>GitHub</h3>
-						<a href="https://github.com/juanmaishere/MapIT">MapIt</a>
-					</div>
-					<div class="footer-section">
-						<h3>Legal</h3>
-						<a href="/politica-de-privacidad">Política de privacidad</a>
-						<a href="/terminos-de-servicio">Términos de servicio</a>
-					</div>
-					<div class="footer-section">
-						<h3>Síguenos</h3>
-						<a href="link-a-facebook">Facebook</a>
-						<a href="link-a-twitter">Twitter</a>
-					</div>
-				</div>
-				<div class="footer-section">
-					<p>© 2022 Nombre de tu aplicación</p>
-				</div>
-			</div>
-		</footer>
-    </body>
+    <slot />
+    <div id="random-images-container"></div>
+    <script>
+      // Número de imágenes que quieres mostrar
+      const numImages = 25;
+
+      // La ruta a tu imagen
+      const imageUrl = "../stars.png";
+
+      // El contenedor donde se colocarán las imágenes
+      const container = document.getElementById("random-images-container");
+      if (!container)
+        throw new Error("No se encontró el contenedor de imágenes");
+
+      // Obtén las alturas del nav y del footer
+      const nav = document.querySelector("nav");
+      const footer = document.querySelector("footer");
+      if (!nav || !footer) throw new Error("No se encontró el nav o el footer");
+
+      const navHeight = nav.offsetHeight;
+      const footerHeight = footer.offsetHeight;
+
+      for (let i = 0; i < numImages; i++) {
+        // Crea una nueva imagen
+        const img = new Image();
+        img.src = imageUrl;
+        img.style.position = "absolute";
+
+        // Cambia el tamaño de la imagen
+        img.style.width = "30px"; // Cambia esto al ancho que desees
+        img.style.height = "30px"; // Cambia esto a la altura que desees
+
+        // Genera una posición aleatoria para la imagen
+        img.style.top =
+          Math.random() *
+            (document.body.scrollHeight - navHeight - footerHeight) +
+          navHeight +
+          "px";
+        img.style.left = Math.random() * document.body.scrollWidth + "px";
+
+        // Agrega la imagen al contenedor
+        container.appendChild(img);
+      }
+    </script>
+
+    <footer class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <div class="contact-info">
+            <img src="../mail.png" alt="mail-logo" />
+            <p>Help@MapIt.com</p>
+          </div>
+          <div class="contact-info">
+            <img src="../telefono.png" alt="telefono-logo" />
+            <p>1-800-123-4567</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>GitHub</h3>
+          <a href="https://github.com/juanmaishere/MapIT">MapIt</a>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <a href="/politica-de-privacidad">Política de privacidad</a>
+          <a href="/terminos-de-servicio">Términos de servicio</a>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <a href="link-a-facebook">Facebook</a>
+          <a href="link-a-twitter">Twitter</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <p>Copyright © 2024 map-it.tech all rights reserved</p>
+      </div>
+    </footer>
+  </body>
 </html>
+
 <style is:global>
-    :root {
-        --accent: 220, 20, 60; /* rojo en RGB */
-		--accent-light: 0, 0, 0; /* blanco en RGB */
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 45%,
-			white 60%
-		);
-    }
+  :root {
+    --accent: 220, 20, 60; /* rojo en RGB */
+    --accent-light: 0, 0, 0; /* blanco en RGB */
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 45%,
+      white 60%
+    );
+  }
 
-    html {
-        font-family: system-ui, sans-serif;
-        background: 	;
-        background-size: 224px;
-        height: 5887px;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    code {
-        font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-    }
+  html {
+    font-family: "Abel", serif;
+  }
 
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-    footer {
-        margin-top: auto;
-    }
-	footer {
-		position: relative; /* Añade esta línea */
-		margin-top: auto;
-	}
-	footer::before {
-		content: "";
-		position: absolute;
-		left: 5%;
-		right: 5%;
-		top: 0;
-		height: 2px;
-		background: linear-gradient(to right, transparent, #000, transparent);
-	}
-    nav {
-        display: flex; /* Organizar los elementos horizontalmente */
-        justify-content: flex-start; /* Alinea los elementos al inicio */
-        align-items: center; /* Alinea verticalmente los elementos */
-        position: relative; /* Posición relativa para alinear el botón de descarga */
-    }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 
-	nav img, nav h1 {
-		margin: 0; /* Elimina cualquier margen automático */
-	}
-
-    nav::after {
-        content: ""; /* Necesario para que el pseudo-elemento se muestre */
-        position: absolute; /* Posiciona el pseudo-elemento en relación con el nav */
-        left: 5%; /* Ajusta este valor para cambiar dónde comienza la línea */
-        right: 5%; /* Ajusta este valor para cambiar dónde termina la línea */
-        bottom: 0; /* Alinea la línea con la parte inferior del nav */
-        height: 2px; /* Ajusta el grosor de la línea */
-        background: linear-gradient(to right, transparent, #000, transparent); /* Crea un gradiente que se difumina hacia los bordes */
-    }
-
-    nav h1 {
-        font-family: "Bevan", serif;
-    }
-
-    nav img,
-    nav h1,
-    nav ul {
-        vertical-align: middle; /* Opcional: alinea verticalmente los elementos */
-    }
-
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding-left: 200px;
-        display: flex; /* Organizar los elementos horizontalmente */
-        font-family: "Abel", serif;
-    }
-
-    nav li {
-        margin-right: 10px; /* Espacio entre elementos */
-        height: 30px; /* Altura fija para los elementos li */
-        line-height: 30px; /* Ajusta la línea para que coincida con la altura */
-
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .site-header {
+    display: flex; /* Organizar los elementos horizontalmente */
+    justify-content: space-between; /* Alinea los elementos al inicio */
+    align-items: center; /* Alinea verticalmente los elementos */
+    position: relative; /* Posición relativa para alinear el botón de descarga */
+    padding: 1rem 2rem;
+  }
+  
+  .site-header ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .site-header::after {
+    content: ""; /* Necesario para que el pseudo-elemento se muestre */
+    position: absolute; /* Posiciona el pseudo-elemento en relación con el nav */
+    left: 5%; /* Ajusta este valor para cambiar dónde comienza la línea */
+    right: 5%; /* Ajusta este valor para cambiar dónde termina la línea */
+    bottom: 0; /* Alinea la línea con la parte inferior del nav */
+    height: 2px; /* Ajusta el grosor de la línea */
+    background: linear-gradient(
+      to right,
+      transparent,
+      #000,
+      transparent
+      ); /* Crea un gradiente que se difumina hacia los bordes */
     }
     
-    nav li.home-bottom{
-        font-family: "cedarville cursive", serif;
-        color:#dc143c;
+    .site-header > div > .app-name {
+      font-family: "Bevan", serif;
+      font-weight: bold;
     }
-    nav li:last-child {
-        margin-right: 0; /* Eliminar margen derecho del último elemento */
+    
+    nav li.home-bottom {
+      font-family: "cedarville cursive", serif;
+      color: #dc143c;
     }
-	
+    
+    nav ul li:first-child a {
+      font-family: "cedarville cursive", serif;
+      color: rgb(227, 73, 73);
+    }
 
-	nav ul li:first-child a {
-		font-family: "cedarville cursive", serif;
-		color:rgb(227, 73, 73);
-	}
-
-	nav ul li:first-child a:hover,
-	nav a:hover {
-		color: white; /* Cambia el color del texto al pasar el ratón */
-		background-color: #802626; /* Cambia el color de fondo al pasar el ratón */
-		transform: scale(1.1); /* Aumenta el tamaño del botón */
-	}
-
-	nav ul li:hover {
-		transform: scale(1.1); /* Aumenta el tamaño del elemento en un 10% */
-	}
-
-	nav a {
-    display: inline-block; /* Cambia el display a inline-block */
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-
+    nav ul li:first-child a:hover,
     nav a:hover {
-        color: white;
-        background-color: #802626;
+      color: white; /* Cambia el color del texto al pasar el ratón */
+      background-color: #802626; /* Cambia el color de fondo al pasar el ratón */
+      transform: scale(1.1); /* Aumenta el tamaño del botón */
     }
     
-    nav .boton {
-        margin-left: auto;
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: black;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
+    nav ul li:hover {
+      transform: scale(1.1); /* Aumenta el tamaño del elemento en un 10% */
     }
+    
+    nav a {
+      justify-content: space-between;
+      display: inline-block; /* Cambia el display a inline-block */
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 5px 10px;
+    border-radius: 5px;
+  }
 
-    nav .boton:hover {
-        background-color: #802626;
-    }
+  nav a:hover {
+    color: white;
+    background-color: #802626;
+  }
+  
+  nav .boton {
+    margin-left: auto;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
 
+  nav .boton:hover {
+    background-color: #802626;
+  }
+  
+  img {
+    width: 50px; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block; /* Mostrar la imagen como un bloque para evitar problemas de alineación */
+    margin-left: auto; /* Centrar la imagen horizontalmente */
+  }
 
-    img {
-        width: 50px; /* Ancho de la imagen */
-        height: auto; /* Altura automática para mantener la proporción */
-        display: block; /* Mostrar la imagen como un bloque para evitar problemas de alineación */
-        margin-left: auto; /* Centrar la imagen horizontalmente */
-    }
+  .container {
+    width: 45%; /* Ancho del contenedor */
+    margin: 17px auto; /* Centrar el contenedor en la página */
+    padding: 520px; /* Espacio interno del contenedor */
+    background-color: white; /* Color del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
 
-    .container {
-        width: 45%; /* Ancho del contenedor */
-        margin: 17px auto; /* Centrar el contenedor en la página */
-        padding: 520px; /* Espacio interno del contenedor */
-        background-color: white; /* Color del contenedor */
-        border-radius: 10px; /* Bordes redondeados */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    }
+  .contact-info {
+    display: flex;
+    align-items: center;
+  }
+  .contact-info img {
+    margin-right: 10px;
+    margin-left: 0;
+    height: 1em; /* Ajusta el tamaño de la imagen al tamaño del texto */
+    width: auto; /* Mantiene la relación de aspecto de la imagen */
+  }
 
-    .site-header {
-        padding: 15px;
-        background-color: #ffffff;
-        border-radius: 10px;
-    }
+  .footer-container::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #000, transparent);
+  }
 
-	.contact-info {
-        display: flex;
-        align-items: center;
-    }
-    .contact-info img {
-		margin-right: 10px;
-		margin-left: 0;
-		height: 1em; /* Ajusta el tamaño de la imagen al tamaño del texto */
-		width: auto; /* Mantiene la relación de aspecto de la imagen */
-	}
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem 1.5rem 0.5rem;
+  }
 
-	.footer-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .footer-section {
-        flex: 1;
-        min-width: 200px;
-        margin: 10px;
-    }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-	#random-images-container {
-        position: absolute;
-        z-index: -1; /* Coloca el contenedor de imágenes detrás de otros contenidos */
-        width: 100%;
-        height: 100%;
-    }
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
 
+  .footer-section:last-child {
+    margin-top: 1rem;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .footer-section:last-child {
+      margin-top: 0;
+    }
+  }
+
+  #random-images-container {
+    position: absolute;
+    z-index: -1000; /* Coloca el contenedor de imágenes detrás de otros contenidos */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
 </style>

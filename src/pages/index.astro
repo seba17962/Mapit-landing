@@ -1,455 +1,495 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Almendra&display=swap">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abel&display=swap">
-    </head>
-	<section>
-		<div id="random-images-container"></div>
-		
-		<main>
-			<div class="flex-container">
-				<div class="MapIt-video-presentation">
-					<h2><span class="text-gradient">MapIT</span><br>Now Available<br>Download now</h2>
-					<p id="slogan" class="MapItt-slogan">Explore your world and your friends' world with MapItT. Available worldwide.</p>
-				
-					<div class="get-started">
-						<label id="slider-label" for="myRange">
-							<span class="label-content">
-							  <img class="play-icon" src="../play-video.png" alt="video">
-							  Watch Video
-							</span>
-						  </label>
-						<input type="range" min="1" max="10" value="1" class="slider" id="myRange">
-						<div id="myModal" class="modal">
-							<div class="modal-content">
-								<span class="close">&times;</span>
-								<video id="myVideo" width="320" height="240" controls>
-									<source src="../Video_demo.mp4" type="video/mp4">
-									Your browser does not support the video tag.
-								</video>
-								<script>
-									// Make sure 'slider' is an HTMLInputElement
-									const slider = document.getElementById('myRange') as HTMLInputElement;
-								  
-									// Make sure 'span' is an HTMLSpanElement
-									const span = document.getElementById('slider-label') as HTMLSpanElement;
-								  
-									// Make sure 'modal' is an HTMLDivElement
-									const modal = document.getElementById('myModal') as HTMLDivElement;
-								  
-									// Make sure 'video' is an HTMLVideoElement
-									const video = document.getElementById('myVideo') as HTMLVideoElement;
-								  
-									// Adjust video size to full screen
-									video.style.width = '70%';
-									video.style.height = '70%';
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Almendra&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
+    />
+  </head>
+  <section>
+    <main>
+      <div class="flex-container">
+        <div class="MapIt-video-presentation">
+          <header>
+            <h1>
+              <span class="text-gradient">MapIT</span><br />Now Available<br
+              />Download now
+            </h1>
+            <p id="slogan" class="MapItt-slogan">
+              <strong>
+                Explore your world and your friends' world with MapItT. Available
+                worldwide.
+              </strong>
+            </p>
+          </header>
+  
+          <div class="get-started">
+            <label id="slider-label" for="myRange">
+              <span class="label-content">
+                <img class="play-icon" src="../play-video.png" alt="video" />
+                Watch Video
+              </span>
+            </label>
+            <input
+              type="range"
+              min="1"
+              max="10"
+              value="1"
+              class="slider"
+              id="myRange"
+            />
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <video id="myVideo" width="320" height="240" controls>
+                  <source src="../Video_demo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <script>
+                  // Make sure 'slider' is an HTMLInputElement
+                  const slider = document.getElementById(
+                    "myRange",
+                  ) as HTMLInputElement;
 
-									// Center the video on the page
-									video.style.position = 'absolute';
-									video.style.top = '40%';
-									video.style.left = '50%';
-									video.style.transform = 'translate(-50%, -50%)';
-								  
-									slider.oninput = function() {
-									  if (slider.value == slider.max) {
-										modal.style.display = "block";
-									  }
-									}
-								  
-									span.onclick = function() {
-									  modal.style.display = "none";
-									  slider.value = '1';
-									}
-								  
-									window.onclick = function(event) {
-									  if (event.target == modal) {
-										modal.style.display = "none";
-										slider.value = '1';
-									  }
-									}
-								  </script>
-							</div>
-						</div>
-					</div>
-				
-				</div>
-				<div class="MapIt-phone-image">
-					
-					
-					<img class="mapit-photos" src="../how-to-use.png" alt="Mapit-map">
+                  // Make sure 'span' is an HTMLSpanElement
+                  const span = document.getElementById(
+                    "slider-label",
+                  ) as HTMLSpanElement;
 
+                  // Make sure 'modal' is an HTMLDivElement
+                  const modal = document.getElementById(
+                    "myModal",
+                  ) as HTMLDivElement;
 
-				</div>
-			</div>
+                  // Make sure 'video' is an HTMLVideoElement
+                  const video = document.getElementById(
+                    "myVideo",
+                  ) as HTMLVideoElement;
 
-			<div class="about-MapIt">
-				<div class="MapIt-section">
-					<div class="MapIt-phone-image">
+                  // Adjust video size to full screen
+                  video.style.width = "70%";
+                  video.style.height = "70%";
 
-						<img class="mapit-photos" src="../add-marker.png" alt="Mapit-map">
+                  // Center the video on the page
+                  video.style.position = "absolute";
+                  video.style.top = "40%";
+                  video.style.left = "50%";
+                  video.style.transform = "translate(-50%, -50%)";
 
-					</div>
-					<div class="MapIt-features">
-						<p class="section-title">FEATURES</p>
-						<h2 class="section-carter-one">Explore your options.</h2>
-						<ul>
-							<li class="marker-bullet">Add Markers</li>
-							<p class="section-text">Add points to your favorite places to share them with your friends. Add photos and a description to enhance your experience.</p>
-							<li class="friend-bullet">Add Friends</li>
-							<p class="section-text">Search for your friends and add them to see their points of interest, also to share yours and visit each other!</p>
-							<li class="map-bullet">Check Your Map</li>
-							<p class="section-text">Once you have your friends and can see their points and yours, explore the map and find which places interest you to visit them.</p>
-						</ul>
-					</div>
+                  slider.oninput = function () {
+                    if (slider.value == slider.max) {
+                      modal.style.display = "block";
+                    }
+                  };
 
-				</div>
+                  span.onclick = function () {
+                    modal.style.display = "none";
+                    slider.value = "1";
+                  };
 
-				<div class="MapIt-section">
-					<div class="MapIt-advantages">
-						<p class="section-title">ADVANTAGES</p>
-						<h2 class="section-carter-one">Why MapIt?</h2>
+                  window.onclick = function (event) {
+                    if (event.target == modal) {
+                      modal.style.display = "none";
+                      slider.value = "1";
+                    }
+                  };
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="MapIt-phone-image">
+          <img class="mapit-photos" src="../how-to-use.png" alt="Mapit-map" />
+        </div>
+      </div>
 
-						<h3>Everything at a click away</h3>
-						<p class="section-text">In a single application, you can view your city map and interact with it as if it were just another map. But most importantly, you can interact with the points you want, adding markers with description and photo, you can also interact with your friends' favorite places, thus creating a true social network experience.</p>
-					</div>
-					<div class="MapIt-phone-image">
+      <div class="about-MapIt">
+        <div class="MapIt-section">
+          <div class="MapIt-phone-image">
+            <img class="mapit-photos" src="../add-marker.png" alt="Mapit-map" />
+          </div>
+          <div class="MapIt-features">
+            <p class="section-title">FEATURES</p>
+            <h2 class="section-carter-one">Explore your options.</h2>
+            <ul>
+              <li class="marker-bullet">Add Markers</li>
+              <p class="section-text">
+                Add points to your favorite places to share them with your
+                friends. Add photos and a description to enhance your
+                experience.
+              </p>
+              <li class="friend-bullet">Add Friends</li>
+              <p class="section-text">
+                Search for your friends and add them to see their points of
+                interest, also to share yours and visit each other!
+              </p>
+              <li class="map-bullet">Check Your Map</li>
+              <p class="section-text">
+                Once you have your friends and can see their points and yours,
+                explore the map and find which places interest you to visit
+                them.
+              </p>
+            </ul>
+          </div>
+        </div>
 
-						<img class="mapit-photos" src="../main-mapit.png" alt="Mapit-map">
-					</div>
-				</div>
+        <div class="MapIt-section">
+          <div class="MapIt-advantages">
+            <p class="section-title">ADVANTAGES</p>
+            <h2 class="section-carter-one">Why MapIt?</h2>
 
-				<div class="MapIt-section">
-					<div class="MapIt-phone-image">
+            <h3>Everything at a click away</h3>
+            <p class="section-text">
+              In a single application, you can view your city map and interact
+              with it as if it were just another map. But most importantly, you
+              can interact with the points you want, adding markers with
+              description and photo, you can also interact with your friends'
+              favorite places, thus creating a true social network experience.
+            </p>
+          </div>
+          <div class="MapIt-phone-image">
+            <img class="mapit-photos" src="../main-mapit.png" alt="Mapit-map" />
+          </div>
+        </div>
 
-						<img id="tree_phones"class="mapit-photos" src="../personalizable.png" alt="Mapit-map">
+        <div class="MapIt-section">
+          <div class="MapIt-phone-image">
+            <img
+              id="tree_phones"
+              class="mapit-photos"
+              src="../personalizable.png"
+              alt="Mapit-map"
+            />
+          </div>
+          <div class="MapIt-personalizable">
+            <h3>Completely customizable</h3>
+            <p class="section-text">
+              MapIt allows you to customize your experience, choosing the map
+              style you like the most, you can also customize your markers with
+              different colors and styles so you can identify them more easily.
+            </p>
+          </div>
+        </div>
 
-					</div>
-					<div class="MapIt-personalizable">
+        <div class="testimonial">
+          <p id="testimonial-text" class="section-title">TESTIMONIALS</p>
+          <h2 id="testimonial-title" class="section-carter-one">
+            What do our users say?
+          </h2>
+          <div class="MapIt-section">
+            <div class="users-image-deco">
+              <!-- add users' images -->
+            </div>
 
-						<h3>Completely customizable</h3>
-						<p class="section-text">MapIt allows you to customize your experience, choosing the map style you like the most, you can also customize your markers with different colors and styles so you can identify them more easily.</p>
-					</div>
-				</div>
+            <div class="MapIt-testimonial">
+              <h3>The best social network of all!</h3>
+              <p class="section-text">
+                Using MapIT, I manage to have everything a social network can
+                offer, I can interact with my friends while I tour my city, thus
+                helping me to discover many places that I had no idea existed.
+                This application helped me rediscover a city that I thought I
+                knew by heart, the best social network without a doubt!
+              </p>
+              <div class="users-images">
+                <!-- add users' images -->
+              </div>
+            </div>
 
-				<div class="testimonial">
-					<p id="testimonial-text" class="section-title">TESTIMONIALS</p>
-					<h2 id="testimonial-title" class="section-carter-one">What do our users say?</h2>
-					<div class="MapIt-section">
-						<div class="users-image-deco">
-
-							<!-- add users' images -->
-
-						</div>
-
-						
-						<div class="MapIt-testimonial">
-							<h3>The best social network of all!</h3>
-							<p class="section-text">Using MapIT, I manage to have everything a social network can offer, I can interact with my friends while I tour my city, thus helping me to discover many places that I had no idea existed. This application helped me rediscover a city that I thought I knew by heart, the best social network without a doubt!</p>
-							<div class="users-images">
-								
-								<!-- add users' images -->
-
-							</div>
-						
-
+            
+          </div>
+        </div>
+      </div>
+    </main>
+  </section>
 </Layout>
+
 <style>
-	main { 
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: rgb(7, 5, 5);
-		font-size: 20px;
-		line-height: 1.6;
-		font-family: system-ui, sans-serif; 
-	}
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: rgb(7, 5, 5);
+    font-size: 20px;
+    line-height: 1.6;
+    font-family: system-ui, sans-serif;
+  }
 
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-		
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
 
-	
-	
-	.flex-container {
-		display: flex;
-		justify-content: flex-start;
-	}
+  .text-gradient {
+    color: transparent;
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 400%;
+    background-position: 0%;
+  }
 
-	.MapIt-video-presentation {
-		flex: 1; /* Ocupa la mitad del espacio disponible */
-		box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el tamaño del contenedor */
-		padding: 20px; /* Añade algo de espacio alrededor del texto */
-		font-family: "Carter One", serif;
+  .flex-container {
+    display: flex;
+    justify-content: flex-start;
+  }
 
-		
-	}
-	#slogan {
-		font-size: 17px; /* Cambia el tamaño del texto */
-		font-family: "Almendra", serif;
-	}
+  .MapIt-video-presentation {
+    flex: 1; /* Ocupa la mitad del espacio disponible */
+    box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el tamaño del contenedor */
+    padding: 20px; /* Añade algo de espacio alrededor del texto */
+    font-family: "Carter One", serif;
+  }
+  #slogan {
+    font-size: 17px; /* Cambia el tamaño del texto */
+    font-family: "Almendra", serif;
+  }
 
-	#random-images-container {
-		position: absolute;
-		z-index: -1; /* Coloca el contenedor de imágenes detrás de otros contenidos */
-		width: 100%;
-		height: 100%;
-	}
+  .MapIt-video-presentation h2,
+  .MapIt-video-presentation p {
+    margin: 0px 0; /* Reduce el espacio alrededor de los elementos h3 y p */
+  }
 
-	.MapIt-video-presentation h2,
-	.MapIt-video-presentation p {
-		margin: 0px 0; /* Reduce el espacio alrededor de los elementos h3 y p */
-	}
+  .MapIt-video {
+    flex: 1; /* Ocupa la mitad del espacio disponible */
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
-	.MapIt-video {
-		flex: 1; /* Ocupa la mitad del espacio disponible */
-	}
-	.modal {
-		display: none;
-		position: fixed;
-		z-index: 1;
-		padding-top: 100px;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		background-color: rgb(0,0,0);
-		background-color: rgba(0,0,0,0.9);
-	}
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
 
-	.modal-content {
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 700px;
-	}
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 25px;
+    border-radius: 8px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+  }
 
-	input[type=range] {
-		-webkit-appearance: none;
-		width: 50%;
-		height: 25px;
-		border-radius: 8px;
-		background: #d3d3d3;
-		outline: none;
-		opacity: 0.7;
-		-webkit-transition: .2s;
-		transition: opacity .2s;
-	}
+  .get-started {
+    position: relative;
+  }
 
-	.get-started {
-		position: relative;
-	}
+  .play-icon {
+    width: 20px; /* Ajusta según sea necesario */
+    vertical-align: middle; /* Alinea la imagen con el texto */
+  }
 
-	.play-icon {
-		width: 20px; /* Ajusta según sea necesario */
-		vertical-align: middle; /* Alinea la imagen con el texto */
-	}
+  .label-content {
+    display: flex;
+    align-items: center;
+  }
 
-	.label-content {
-		display: flex;
-		align-items: center;
-	}
+  .slider {
+    float: left; /* Asegura que el botón siempre esté a la izquierda */
+  }
 
-	.slider {
-		float: left; /* Asegura que el botón siempre esté a la izquierda */
-	}
+  #slider-label {
+    position: absolute;
+    top: 5px; /* Ajusta según sea necesario */
+    left: 36%; /* Centra el texto */
+    transform: translateX(-50%); /* Centra el texto */
+    font-size: 10px; /* Ajusta según sea necesario */
+    z-index: 1;
+  }
 
-	#slider-label {
-		position: absolute;
-		top: 5px; /* Ajusta según sea necesario */
-		left: 36%; /* Centra el texto */
-		transform: translateX(-50%); /* Centra el texto */
-		font-size: 10px; /* Ajusta según sea necesario */
-		z-index: 1;
-	}
+  input[type="range"]:hover {
+    opacity: 1;
+  }
 
-	input[type=range]:hover {
-		opacity: 1;
-	}
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80px;
+    height: 25px;
+    border-radius: 10%;
+    background: #db143c;
+    cursor: pointer;
+  }
 
-	input[type=range]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 80px;
-		height: 25px;
-		border-radius: 10%;
-		background: #db143c;
-		cursor: pointer;
-	}
+  input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #db143c;
+    cursor: pointer;
+  }
 
-	input[type=range]::-moz-range-thumb {
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-		background: #db143c;
-		cursor: pointer;
-	}
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 
-	.close {
-		position: absolute;
-		top: 20px;
-		right: 35px;
-		color: #f1f1f1;
-		font-size: 40px;
-		font-weight: bold;
-		transition: 0.3s;
-	}
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-	.close:hover,
-	.close:focus {
-		color: #bbb;
-		text-decoration: none;
-		cursor: pointer;
-	}
+  .about-MapIt > div {
+    display: block;
+    width: 100%;
+  }
 
-	.about-MapIt > div {
-		display: block;
-		width: 100%;
-	}
+  .MapIt-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
 
-	.MapIt-section {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		align-items: center;
+  .MapIt-phone-image {
+    height: 500px;
+    width: 45%;
 
-	}
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-	.MapIt-phone-image {
+  .MapIt-features,
+  .MapIt-advantages,
+  .MapIt-personalizable,
+  .MapIt-testimonial {
+    width: 45%;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-		height: 500px; 
-		width: 45%;
-		
-		background-size: cover;
-		display:inline-block;
-		vertical-align: middle; 
-		
-	}
+  .section-title {
+    height: 12px;
+    text-align: left;
+    color: #ff5555;
+    font-size: 15px;
+    font-family: "Abel", serif;
+    margin-bottom: 0;
+  }
 
-	.MapIt-features, .MapIt-advantages, .MapIt-personalizable, .MapIt-testimonial {
-		width: 45%;
-		display:inline-block;
-		vertical-align: middle;
-		
-	}
+  .section-text {
+    text-align: justify;
+    font-size: 15px;
+    font-family: "Abel", serif;
+  }
 
-	.section-title {
-		height: 12px;
-		text-align: left;
-		color: #FF5555;
-		font-size: 15px;
-		font-family: "Abel", serif;
-		margin-bottom: 0;
-	}
+  .section-carter-one {
+    text-align: left;
+    font-family: "Carter One", serif;
+    margin-top: 0;
+  }
 
-	.section-text {
-		text-align: justify;
-		font-size: 15px;
-		font-family: "Abel", serif;
-	}
+  #testimonial-text,
+  #testimonial-title {
+    text-align: center;
+  }
+  .users-image-deco {
+    height: 350px;
+    width: 45%;
+    /* Agrega tu imagen de fondo aquí */
+    background: url("/users-image-deco.png") no-repeat center center;
+    background-size: cover;
+  }
 
-	.section-carter-one {
-		text-align: left;
-		font-family: "Carter One", serif;
-		margin-top: 0;
-	}
+  .FAQ {
+    width: 100%;
+    /* Estilos para FAQ van aquí */
+  }
 
-	#testimonial-text,
-	#testimonial-title {
-		text-align: center;
-		
-	}
-	.users-image-deco {
-		height: 350px;
-		width: 45%;
-		/* Agrega tu imagen de fondo aquí */
-		background: url('/users-image-deco.png') no-repeat center center;
-		background-size: cover;
-	}
+  #tree_phones {
+    width: 100%; /* Ajusta este valor */
+    height: auto; /* Mantén esto en auto para mantener las proporciones de la imagen */
+    padding-top: 100px;
+    margin-left: -30px;
+  }
 
-	.FAQ {
-		width: 100%;
-		/* Estilos para FAQ van aquí */
-	}
-	
-	#tree_phones {
-		width: 100%;  /* Ajusta este valor */
-		height: auto; /* Mantén esto en auto para mantener las proporciones de la imagen */
-		padding-top: 100px;
-		margin-left: -30px;
-		 ;
-	}
+  .marker-bullet {
+    list-style-type: none;
+    background-image: url("../bullet-marker.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left center; /* Ajusta la posición vertical de la imagen */
+    padding-left: 30px;
+  }
 
-	.marker-bullet {
-		list-style-type: none;
-		background-image: url('../bullet-marker.png');
-		background-size: 20px;
-		background-repeat: no-repeat;
-		background-position: left center; /* Ajusta la posición vertical de la imagen */
-		padding-left: 30px;
-	}
+  .friend-bullet {
+    list-style-type: none;
+    background-image: url("../bullet-friend.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left center; /* Ajusta la posición vertical de la imagen */
+    padding-left: 30px;
+  }
 
-	.friend-bullet {
-		list-style-type: none;
-		background-image: url('../bullet-friend.png');
-		background-size: 20px;
-		background-repeat: no-repeat;
-		background-position: left center; /* Ajusta la posición vertical de la imagen */
-		padding-left: 30px;
-	}
+  .map-bullet {
+    list-style-type: none;
+    background-image: url("../bullet-map.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left center; /* Ajusta la posición vertical de la imagen */
+    padding-left: 30px;
+  }
 
-	.map-bullet {
-		list-style-type: none;
-		background-image: url('../bullet-map.png');
-		background-size: 20px;
-		background-repeat: no-repeat;
-		background-position: left center; /* Ajusta la posición vertical de la imagen */
-		padding-left: 30px;
-	}
+  .mapit-photos {
+    width: 100%;
+    height: auto;
+  }
 
-	.mapit-photos {
-		width: 100%;
-		height: auto;
-	}
-	
-	
-	
-	
-	@media (max-width: 600px) {
-		.flex-container {
-			flex-direction: column;
-		}
+  @media (max-width: 600px) {
+    .flex-container {
+      flex-direction: column;
+    }
 
-		.MapIt-video-presentation {
-			/* ajusta los estilos para que se vean bien en pantallas pequeñas */
-		}
-	}
+    .MapIt-video-presentation {
+      /* ajusta los estilos para que se vean bien en pantallas pequeñas */
+    }
+  }
 </style>

@@ -216,17 +216,10 @@ import Layout from '../layouts/Layout.astro';
         margin: 0 auto; /* Añade esto */
     }
 
-    #random-images-container {
-        position: absolute;
-        z-index: -1; /* Coloca el contenedor de imágenes detrás de otros contenidos */
-        width: 100%;
-        height: 100%;
-	}
-
-
     @media (max-width: 900px) {
 
         .aboutUs__main {
+
             padding-left: 20px; /* Ajusta el padding para pantallas pequeñas */
         }
 
@@ -251,6 +244,10 @@ import Layout from '../layouts/Layout.astro';
             padding-left: 10px;
             position: relative; /* Añade esto */
             z-index: 1; /* Añade esto */
+        }
+
+        .aboutUs__header {
+            font-size: 1.3rem;
         }
 
         .aboutUs__text {
