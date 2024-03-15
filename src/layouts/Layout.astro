@@ -30,8 +30,6 @@ let title = Astro.props.title;
                     <ul>
                         <li class="home-bottom"><a href="/">Home</a></li>
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/pricing">Pricing</a></li>
-                        <li><a href="/features">Features</a></li>
                     </ul>
                 <a href="COLOCAR LINK PARA DESCARGAR" class="boton">Download</a>
             </nav>
@@ -41,7 +39,7 @@ let title = Astro.props.title;
 			<div id="random-images-container"></div>
 			<script>
 				// Número de imágenes que quieres mostrar
-				const numImages = 30;
+				const numImages = 25;
 			
 				// La ruta a tu imagen
 				const imageUrl = '../stars.png';
@@ -116,13 +114,13 @@ let title = Astro.props.title;
 </html>
 <style is:global>
     :root {
-        --accent: 255, 0, 0; /* rojo en RGB */
-		--accent-light: 255, 255, 255; /* blanco en RGB */
+        --accent: 220, 20, 60; /* rojo en RGB */
+		--accent-light: 0, 0, 0; /* blanco en RGB */
 		--accent-dark: 49, 10, 101;
 		--accent-gradient: linear-gradient(
 			45deg,
 			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
+			rgb(var(--accent-light)) 45%,
 			white 60%
 		);
     }
@@ -168,11 +166,11 @@ let title = Astro.props.title;
 		background: linear-gradient(to right, transparent, #000, transparent);
 	}
     nav {
-    display: flex; /* Organizar los elementos horizontalmente */
-    justify-content: flex-start; /* Alinea los elementos al inicio */
-    align-items: center; /* Alinea verticalmente los elementos */
-    position: relative; /* Posición relativa para alinear el botón de descarga */
-}
+        display: flex; /* Organizar los elementos horizontalmente */
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+        align-items: center; /* Alinea verticalmente los elementos */
+        position: relative; /* Posición relativa para alinear el botón de descarga */
+    }
 
 	nav img, nav h1 {
 		margin: 0; /* Elimina cualquier margen automático */
