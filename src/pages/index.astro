@@ -110,15 +110,12 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
         <div class="MapIt-phone-image">
-          <img class="mapit-photos" src="../how-to-use.png" alt="Mapit-map" />
+          <img id="mapit-how-to-use"class="mapit-photos" src="../how-to-use.png" alt="Mapit-map" />
         </div>
       </div>
 
       <div class="about-MapIt">
         <div class="MapIt-section">
-          <div class="MapIt-phone-image">
-            <img class="mapit-photos" src="../add-marker.png" alt="Mapit-map" />
-          </div>
           <div class="MapIt-features">
             <p class="section-title">FEATURES</p>
             <h2 class="section-carter-one">Explore your options.</h2>
@@ -141,6 +138,9 @@ import Layout from "../layouts/Layout.astro";
                 them.
               </p>
             </ul>
+          </div>
+          <div class="MapIt-phone-image">
+            <img class="mapit-photos" src="../add-marker.png" alt="Mapit-map" />
           </div>
         </div>
 
@@ -216,7 +216,8 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
   main {
-    margin: 10px;
+
+    margin: 10px auto;
     width: 800px;
     max-width: calc(100% - 2rem);
     color: rgb(7, 5, 5);
@@ -254,12 +255,25 @@ import Layout from "../layouts/Layout.astro";
   .flex-container {
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+
+  #mapit-how-to-use {
+    margin: 0;
+    width: 45%;
+    height: auto;
+  }
+  .MapIt-phone-image {
+    display: contents;
+    vertical-align: middle;
+
   }
 
   .MapIt-video-presentation {
     flex: 1; /* Ocupa la mitad del espacio disponible */
     box-sizing: border-box; /* Asegura que el padding y el borde no aumenten el tamaño del contenedor */
-    padding-top: 20px; /* Añade algo de espacio alrededor del texto */
+    padding-top: 60px; /* Añade algo de espacio alrededor del texto */
+    padding-right: 20px;
     font-family: "Carter One", serif;
   }
   #slogan {
@@ -374,33 +388,22 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .about-MapIt > div {
-    display: block;
+    display: inline-block;
     width: 100%;
   }
 
   .MapIt-section {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    align-items: center;
   }
 
-  .MapIt-phone-image {
-    height: auto;
-    width: 50%;
 
-    background-size: cover;
-    display: inline-block;
-    vertical-align: middle;
-    
-  }
 
   .MapIt-features,
   .MapIt-advantages,
   .MapIt-personalizable,
   .MapIt-testimonial {
-    width: 45%;
-    display: inline-block;
+    width: 100%;
+
     vertical-align: middle;
   }
 
@@ -424,7 +427,7 @@ import Layout from "../layouts/Layout.astro";
     text-align: left;
     font-family: "Carter One", serif;
     margin-top: 0;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   #testimonial-text,
@@ -478,7 +481,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .mapit-photos {
-    width: 110%;
+    width: 45%;
     height: auto;
     padding-top: 20px;
   }
