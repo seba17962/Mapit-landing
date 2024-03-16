@@ -164,14 +164,6 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <div class="MapIt-section">
-          <div class="MapIt-phone-image">
-            <img
-              id="tree_phones"
-              class="mapit-photos"
-              src="../personalizable.png"
-              alt="Mapit-map"
-            />
-          </div>
           <div class="MapIt-personalizable">
             <h3>Completely customizable</h3>
             <p class="section-text">
@@ -180,33 +172,39 @@ import Layout from "../layouts/Layout.astro";
               different colors and styles so you can identify them more easily.
             </p>
           </div>
+          <div class="MapIt-phone-image">
+            <img
+              id="tree_phones"
+              class="mapit-photos"
+              src="../personalizable.png"
+              alt="Mapit-map"
+            />
+          </div>
         </div>
-
-        <div class="testimonial">
-          <p id="testimonial-text" class="section-title">TESTIMONIALS</p>
-          <h2 id="testimonial-title" class="section-carter-one">
-            What do our users say?
-          </h2>
-          <div class="MapIt-section">
-            <div class="users-image-deco">
-              <!-- add users' images -->
-            </div>
-
-            <div class="MapIt-testimonial">
-              <h3>The best social network of all!</h3>
-              <p class="section-text">
-                Using MapIT, I manage to have everything a social network can
-                offer, I can interact with my friends while I tour my city, thus
-                helping me to discover many places that I had no idea existed.
-                This application helped me rediscover a city that I thought I
-                knew by heart, the best social network without a doubt!
-              </p>
-              <div class="users-images">
+        <div class="MapIt-section"></div>
+          <div class="testimonial">
+            <p id="testimonial-text" class="section-title">TESTIMONIALS</p>
+            <h2 id="testimonial-title" class="section-carter-one">
+              What do our users say?
+            </h2>
+            
+              <div class="users-image-deco">
                 <!-- add users' images -->
               </div>
-            </div>
 
-            
+              <div class="MapIt-testimonial">
+                <h3>The best social network of all!</h3>
+                <p class="section-text">
+                  Using MapIT, I manage to have everything a social network can
+                  offer, I can interact with my friends while I tour my city, thus
+                  helping me to discover many places that I had no idea existed.
+                  This application helped me rediscover a city that I thought I
+                  knew by heart, the best social network without a doubt!
+                </p>
+                <div class="users-images">
+                  <!-- add users' images -->
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -243,6 +241,10 @@ import Layout from "../layouts/Layout.astro";
     margin-bottom: 1em;
   }
 
+  section{
+    margin-bottom: 20px;
+  }
+
   .text-gradient {
     color: transparent;
     background-image: var(--accent-gradient);
@@ -255,7 +257,6 @@ import Layout from "../layouts/Layout.astro";
   .flex-container {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 50px;
   }
 
   #mapit-how-to-use {
@@ -394,9 +395,8 @@ import Layout from "../layouts/Layout.astro";
 
   .MapIt-section {
     width: 100%;
+    margin-top: 50px;
   }
-
-
 
   .MapIt-features,
   .MapIt-advantages,
@@ -436,7 +436,7 @@ import Layout from "../layouts/Layout.astro";
   }
   .users-image-deco {
     height: 350px;
-    width: 45%;
+    width: 100%;
     /* Agrega tu imagen de fondo aquí */
     background: url("/users-image-deco.png") no-repeat center center;
     background-size: cover;
@@ -450,7 +450,7 @@ import Layout from "../layouts/Layout.astro";
   #tree_phones {
     width: 100%; /* Ajusta este valor */
     height: auto; /* Mantén esto en auto para mantener las proporciones de la imagen */
-    padding-top: 100px;
+    padding-top: 10px;
   }
 
   .marker-bullet {
